@@ -3,12 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DonatorModule } from './donator/donator.module';
 import { DatabaseModule } from './database';
-import { ONGModule } from './ONG/ONG.module';
+import { OngModule } from './ONG/ONG.module';
 import { ProductModule } from './product/products.module';
 
 @Module({
-  imports: [DatabaseModule,DonatorModule,ONGModule,ProductModule],
+  imports: [DatabaseModule, DonatorModule, OngModule, ProductModule],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
