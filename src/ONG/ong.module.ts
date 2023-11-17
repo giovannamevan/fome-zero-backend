@@ -13,9 +13,9 @@ import { LoginONGModule } from './login_ong/login_ong.module';
     EditONGModule,
     GetONGInterestsModule,
     LoginONGModule
-],
+  ],
   controllers: [],
   providers: [],
-  
+
 })
-export class ONGModule{}
+export class OngModule { }
