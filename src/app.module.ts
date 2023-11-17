@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DonatorModule } from './donator/donator.module';
 import { DatabaseModule } from './database';
-import { OngModule } from './ONG/Ong.module';
+import { OngModule } from './ONG/ong.module';
 import { ProductModule } from './product/products.module';
 
 @Module({
