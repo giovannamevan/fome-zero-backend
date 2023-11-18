@@ -4,6 +4,7 @@ import { GetONGModule } from './get_ong/get_ong.module';
 import { EditONGModule } from './patch_ong/patch_ong.module';
 import { GetONGInterestsModule } from './get_ong_interests/get_ong_interests.module';
 import { LoginONGModule } from './login_ong/login_ong.module';
+import { AddONGInterestModule } from './add_ong_interests/add_ong_interests.module';
 
 
 @Module({
@@ -12,7 +13,8 @@ import { LoginONGModule } from './login_ong/login_ong.module';
     GetONGModule,
     EditONGModule,
     GetONGInterestsModule,
-    LoginONGModule
+    LoginONGModule,
+    AddONGInterestModule
   ],
   controllers: [],
   providers: [],
