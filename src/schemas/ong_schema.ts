@@ -6,20 +6,23 @@ export type ONGDocument = mongoose.HydratedDocument<ONG>
 
 @Schema()
 export class ONG {
-  @Prop({required:true})
+  @Prop({ required: true })
   nome_organizacao: string;
 
-  @Prop({required:true})
-  email:string
+  @Prop({ required: true })
+  email: string
 
-  @Prop({required:true})
+  @Prop({ required: true })
   senha: string;
 
-  @Prop({required:true})
-  tipo_interessado:string;
+  @Prop({ required: true })
+  tipo_interessado: string;
 
-  @Prop({required:true, type:[{type:mongoose.Schema.Types.ObjectId,ref:'Product'}]})
-  interesses:Product[];
+  @Prop({ required: true })
+  imagem: string;
+
+  @Prop({ required: true, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })
+  interesses: Product[];
 }
 
 export const ONGSchema = SchemaFactory.createForClass(ONG)

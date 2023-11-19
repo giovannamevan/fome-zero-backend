@@ -5,16 +5,16 @@ import { EditONGDto } from 'src/DTO´s/edit_ong.dto';
 import { ONG } from 'src/schemas/ong_schema';
 
 @Injectable()
-export class EditONGService{
-    constructor(
-        @InjectModel(ONG.name)
-        private readonly loginONGModel:Model<ONG>,
-    ) {}
+export class EditONGService {
+  constructor(
+    @InjectModel(ONG.name)
+    private readonly loginONGModel: Model<ONG>,
+  ) { }
 
   async editONG(ongData: EditONGDto): Promise<ONG> {
-    const edittedDonator = await this.loginONGModel.findByIdAndUpdate(ongData.ONGId,ongData).exec()
-    const donatorToReturn = await this.loginONGModel.findById(ongData.ONGId)
-    return donatorToReturn 
+    const edittedONG = await this.loginONGModel.findByIdAndUpdate(ongData.ONGId, ongData).exec()
+    const ongToReturn = await this.loginONGModel.findById(ongData.ONGId)
+    return ongToReturn
   }
 
 }
