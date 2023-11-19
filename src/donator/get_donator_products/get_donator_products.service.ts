@@ -9,7 +9,7 @@ export class GetDonatorProductsService {
   constructor(
     @InjectModel(Donator.name)
     private donatorModel: Model<Donator>,
-  ) {}
+  ) { }
 
 
   async findDonatorProducts(id: string): Promise<Product[]> {
