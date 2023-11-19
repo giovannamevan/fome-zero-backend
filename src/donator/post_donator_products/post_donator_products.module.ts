@@ -6,8 +6,9 @@ import { PostDonatorProductService } from './post_donator_products.service';
 import { PostDonatorProductController } from './post_donator_products.controller';
 
 @Module({
-  imports: [ MongooseModule.forFeature([{name:Product.name, schema:ProductSchema}]),MongooseModule.forFeature([{name:Donator.name, schema:DonatorSchema}])],
+  imports: [MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
+  MongooseModule.forFeature([{ name: Donator.name, schema: DonatorSchema }])],
   controllers: [PostDonatorProductController],
   providers: [PostDonatorProductService],
 })
-export class PostDonatorProductModule{}
+export class PostDonatorProductModule { }

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ONG } from 'src/schemas/ong_schema';
-import { Product } from 'src/schemas/product_schema';
+import { Product, ProductDocument } from 'src/schemas/product_schema';
 
 @Injectable()
 export class GetProductsServices {
@@ -12,7 +12,7 @@ export class GetProductsServices {
   ) { }
 
   async findAllProducts(): Promise<Product[]> {
-    const products = await this.productModel.find().populate('donator').populate('ongs').exec()
+    const products = await this.productModel.find().populate('ongs').populate('donator').exec()
     return products
   }
 
@@ -30,9 +30,11 @@ export class GetProductsServices {
       })
     })
 
-    const allProducts = await this.findAllProducts()
-    const filteredProducts = allProducts.filter(product => allInterests.indexOf(product) === -1)
-    return filteredProducts
+    const allProducts = await this.productModel.find().populate('ongs').populate('donator').exec()
+
+    const availableProducts = allProducts.filter(product => !allInterests.some(interest => interest._id.equals(product._id)));
+
+    return availableProducts
 
   }
 

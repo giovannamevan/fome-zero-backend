@@ -18,7 +18,7 @@ export class ONG {
   @Prop({ required: true })
   tipo_interessado: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   imagem: string;
 
   @Prop({ required: true, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })

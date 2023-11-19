@@ -14,8 +14,18 @@ export class PostONGInterestService {
     async postOngInterest(product_id: string, ong_id: string): Promise<ONG> {
         const ongToUpdate = await this.postONGInterestRepository.findById(ong_id)
         const productToAdd = await this.getProductRepository.findById(product_id)
+        ongToUpdate.interesses.forEach(interesse => {
+            let alreadyThere = false
+            if (interesse === productToAdd) {
+
+                console.log("ja tem esse produto")
+                alreadyThere = true
+                return
+            }
+        })
+        console.log("ja tem esse produto")
         ongToUpdate.interesses.push(productToAdd)
-        await this.postONGInterestRepository.findByIdAndUpdate(ong_id, ongToUpdate).exec()
+        await ongToUpdate.save()
         return ongToUpdate
     }
 }

@@ -21,7 +21,7 @@ export class Donator {
   @Prop({ required: true })
   senha: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   imagem: string;
 
   @Prop({ required: true, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })

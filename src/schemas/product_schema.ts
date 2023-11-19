@@ -25,13 +25,13 @@ export class Product {
   @Prop({ required: true })
   validade: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   imagem: string;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Donator' })
   donator: Donator;
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ONG' }] })
+  @Prop({ required: false, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ONG' }] })
   ongs: ONG[];
 
 }
