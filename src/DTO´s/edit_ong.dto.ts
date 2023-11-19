@@ -4,6 +4,5 @@ export class EditONGDto {
     readonly nome_organizacao: string;
     readonly senha: string;
     readonly email: string;
-    readonly tipo_interessado: string;
     readonly imagem: string;
 }
