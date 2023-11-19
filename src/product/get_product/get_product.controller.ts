@@ -12,17 +12,16 @@ export class GetProductsController {
         return allProductsList
     }
 
-    @Get('/:id')
-    async GetProductById(@Param("id") param: string): Promise<Product> {
-        const selectedProduct = await this.useGetProducts.findProductById(param)
-        return selectedProduct
-    }
-
     @Get('/available')
     async GetAvailableProducts(): Promise<Product[]> {
         const availableProducts = await this.useGetProducts.findAvailableProducts()
         return availableProducts
     }
 
+    @Get('/:id')
+    async GetProductById(@Param("id") param: string): Promise<Product> {
+        const selectedProduct = await this.useGetProducts.findProductById(param)
+        return selectedProduct
+    }
 
 }
