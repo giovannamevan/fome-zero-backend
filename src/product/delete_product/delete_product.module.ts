@@ -9,4 +9,4 @@ import { DeleteProductService } from './delete_product.service';
     controllers: [DeleteProductController],
     providers: [DeleteProductService],
 })
-export class PostONGModule { }
+export class DeleteProductModule { }
