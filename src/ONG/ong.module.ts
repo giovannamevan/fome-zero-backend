@@ -5,6 +5,7 @@ import { EditONGModule } from './patch_ong/patch_ong.module';
 import { GetONGInterestsModule } from './get_ong_interests/get_ong_interests.module';
 import { LoginONGModule } from './login_ong/login_ong.module';
 import { AddONGInterestModule } from './add_ong_interests/add_ong_interests.module';
+import { GiveUpProductModule } from './desist_product/desist_product.module';
 
 
 @Module({
@@ -14,7 +15,8 @@ import { AddONGInterestModule } from './add_ong_interests/add_ong_interests.modu
     EditONGModule,
     GetONGInterestsModule,
     LoginONGModule,
-    AddONGInterestModule
+    AddONGInterestModule,
+    GiveUpProductModule
   ],
   controllers: [],
   providers: [],
