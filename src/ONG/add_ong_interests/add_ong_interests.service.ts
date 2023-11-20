@@ -11,11 +11,11 @@ export class PostONGInterestService {
         @InjectModel(Product.name) private readonly getProductRepository: Model<Product>,
     ) { }
 
-    async postOngInterest(product_id: string, ong_id: string): Promise<ONG> {
+    async postOngInterest(product_id: string, ong_id: string): Promise<ONG | false> {
         const ongToUpdate = await this.postONGInterestRepository.findById(ong_id)
         const productToAdd = await this.getProductRepository.findById(product_id)
+        let alreadyThere = false
         ongToUpdate.interesses.forEach(interesse => {
-            let alreadyThere = false
             if (interesse === productToAdd) {
 
                 console.log("ja tem esse produto")
@@ -24,8 +24,12 @@ export class PostONGInterestService {
             }
         })
         console.log("ja tem esse produto")
-        ongToUpdate.interesses.push(productToAdd)
-        await ongToUpdate.save()
-        return ongToUpdate
+        if (!alreadyThere) {
+            ongToUpdate.interesses.push(productToAdd)
+            await ongToUpdate.save()
+            return ongToUpdate
+
+        }
+        return false 
     }
 }
