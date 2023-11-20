@@ -1,0 +1,11 @@
+Projeto full stack utilizando NodeJS (nest)
+
+Alicia Feliciano - 12121BSI219
+Giovanna Evangelista - 12121BSI266
+Giovanna Guzzardi - 12121BSI261
+
+Link vercel: https://fome-zero-projeto-frontend-final.vercel.app/index.html
+Link API node: https://fome-zero-badkend.onrender.com/
+
+Link repositório frontend: https://github.com/giovannamevan/fome-zero-projeto-frontend
+Link repositorio backend: https://github.com/giovannamevan/fome-zero-backend
