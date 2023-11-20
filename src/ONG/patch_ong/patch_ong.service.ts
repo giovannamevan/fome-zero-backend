@@ -12,7 +12,7 @@ export class EditONGService {
   ) { }
 
   async editONG(ongData: EditONGDto): Promise<ONG> {
-    const edittedONG = await this.loginONGModel.findByIdAndUpdate(ongData.ONGId, ongData).exec()
+    const edittedONG = await this.loginONGModel.findByIdAndUpdate(ongData.ONGId, {...ongData}).exec()
     const ongToReturn = await this.loginONGModel.findById(ongData.ONGId)
     return ongToReturn
   }

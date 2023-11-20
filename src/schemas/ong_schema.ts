@@ -6,13 +6,13 @@ export type ONGDocument = mongoose.HydratedDocument<ONG>
 
 @Schema()
 export class ONG {
-  @Prop({ required: true })
+  @Prop({ required: false})
   nome_organizacao: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false})
   email: string
 
-  @Prop({ required: true })
+  @Prop({ required: false})
   senha: string;
 
   @Prop({ required: true })

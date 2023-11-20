@@ -7,10 +7,9 @@ export class PostDonatorProductController {
     constructor(private readonly usePostDonatorProduct:PostDonatorProductService) { }
 
     @Post('/postProduct')
-    async PostUser(@Body()newProductDto:NewProductDto
-    )
-
+    async PostUser(@Body()newProductDto:NewProductDto )
     {
+    console.log("tentou me chamar AAAAAAAAAAAAAA")
     const newDonatorCreated = await this.usePostDonatorProduct.postDonatorProduct(newProductDto)
     return newDonatorCreated
     }

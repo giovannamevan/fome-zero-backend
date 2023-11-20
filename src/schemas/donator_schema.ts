@@ -6,25 +6,25 @@ export type DonatorDocument = mongoose.HydratedDocument<Donator>
 
 @Schema()
 export class Donator {
-  @Prop({ required: true })
+  @Prop({ required: false })
   nome_empresa: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   endereco: string
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   email: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   telefone: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   senha: string;
 
   @Prop({ required: false })
   imagem: string;
 
-  @Prop({ required: true, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })
+  @Prop({ required: false, type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })
   produtos: Product[];
 }
 
