@@ -1,4 +1,4 @@
-import { Controller, Body, Post,  } from "@nestjs/common";
+import { Controller, Body, Post, Patch  } from "@nestjs/common";
 import { NewONGDto } from "src/DTO´s/new_ong.dto";
 import { EditONGService } from "./patch_ong.service";
 import { EditONGDto } from "src/DTO´s/edit_ong.dto";
@@ -7,7 +7,7 @@ import { EditONGDto } from "src/DTO´s/edit_ong.dto";
 export class EditONGController{
     constructor(private readonly useEditONG:EditONGService) { }
 
-    @Post('/')
+    @Patch('/')
     async PostUser(@Body()newONGDto:EditONGDto )
     {
     const newDonatorCreated = await this.useEditONG.editONG(newONGDto)
